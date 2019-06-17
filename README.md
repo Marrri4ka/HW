@@ -1,3 +1,5 @@
+ to acquire  you'll need your own Firebase credentials and place them in the appropriate file, in the appropriate place, with the appropriate variable names
+
 # OnlineShop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
