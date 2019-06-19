@@ -1,4 +1,6 @@
-<div class="panel panel-default">
+<button>Add new Album</button>
+<!-- <p class="card-text" [hidden]="true">{{submitForm}}</p> -->
+<div id = "submitform" class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Add New Album to Inventory</h3>
   </div>
@@ -21,7 +23,18 @@
         <br>
         <textarea #newDescription></textarea>
       </div>
-      <button (click)="submitForm(newTitle.value, newArtist.value, newDescription.value); newTitle.value=''; newArtist.value=''; newDescription.value=''">Add</button>
+
+
+      <div>
+        <label>Album Price:</label>
+        <br>
+        <input type="number" #newPrice>
+      </div>
+      <button (click)="submitForm(newTitle.value, newArtist.value, newDescription.value, newPrice.value);
+       newTitle.value='';
+       newArtist.value='';
+       newPrice.value='';
+      newDescription.value=''">Add</button>
     </div>
   </div>
 </div>

@@ -3,7 +3,9 @@
 
 <div *ngFor="let album of albums | async"  class="panel panel-default">
   <div class="panel-body">
-    <h3 (click)="goToDetailPage(album)"><em>{{album.title}}</em> by {{album.artist}}</h3>
+    <h3 (click)="goToDetailPage(album)"><a style="color:blue;">
+      {{album.title}}</a> <br>by {{album.artist}}</h3>
+      <strong>Price: $</strong>{{album.price}}
     <div *ngIf="currentRoute === '/admin'">
       {{album.description}}
       <hr>
