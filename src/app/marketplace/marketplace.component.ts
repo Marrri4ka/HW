@@ -2,20 +2,23 @@ import { Component, OnInit} from '@angular/core';
 import { Album } from '../album.model';
 import { Router } from '@angular/router';
 import { AlbumService } from '../album.service';
+import { ShoppingcartService } from '../shoppingcart.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-marketplace',
   templateUrl: './marketplace.component.html',
   styleUrls: ['./marketplace.component.css'],
-  providers: [AlbumService]
+  providers: [AlbumService, ShoppingcartService]
 })
 export class MarketplaceComponent implements OnInit {
 
   albums: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
-  constructor(private router: Router, private albumService: AlbumService){}
+  newMaxPrice: number = 1000;
+
+  constructor(private router: Router, private albumService: AlbumService, private shoppingcartService: ShoppingcartService){}
 
   ngOnInit(){
     this.albums = this.albumService.getAlbums();
@@ -24,6 +27,10 @@ export class MarketplaceComponent implements OnInit {
   goToDetailPage(clickedAlbum) {
    this.router.navigate(['albums', clickedAlbum.$key]);
 
+  }
+
+  addToCart(album){
+    this.shoppingcartService.addToCart(album);
   }
 
  //  albums: Album[] = [

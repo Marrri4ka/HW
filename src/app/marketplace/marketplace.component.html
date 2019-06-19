@@ -1,11 +1,14 @@
 <h2>Marketplace</h2>
+<h3>Items in card:</h3>
 
+<input type="number" [(ngModel)]="newMaxPrice" />
 
-<div *ngFor="let album of albums | async"  class="panel panel-default">
+<div *ngFor="let album of albums | async | filterbyprice:newMaxPrice" class="panel panel-default">
   <div class="panel-body">
     <h3 (click)="goToDetailPage(album)"><a style="color:blue;">
-      {{album.title}}</a> <br>by {{album.artist}}</h3>
-      <strong>Price: $</strong>{{album.price}}
+        {{album.title}}</a> <br>by {{album.artist}}</h3>
+    <strong>Price: $</strong>{{album.price}}<br>
+    <button (click)="addToCart(album)">Add to cart</button>
     <div *ngIf="currentRoute === '/admin'">
       {{album.description}}
       <hr>

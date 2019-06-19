@@ -1,6 +1,6 @@
-<button>Add new Album</button>
+<button (click)="showAddForm()">Add new Album</button>
 <!-- <p class="card-text" [hidden]="true">{{submitForm}}</p> -->
-<div id = "submitform" class="panel panel-default">
+<div id="submitform" class="panel panel-default" *ngIf="isShowAddForm()">
   <div class="panel-heading">
     <h3 class="panel-title">Add New Album to Inventory</h3>
   </div>

@@ -5,6 +5,7 @@ import {AboutComponent} from './about/about.component';
 import { MarketplaceComponent }   from './marketplace/marketplace.component';
 import { AlbumDetailComponent }   from './album-detail/album-detail.component';
 import { AdminComponent }   from './admin/admin.component';
+import { ShoppingcartComponent} from './shoppingcart/shoppingcart.component';
 
 const appRoutes: Routes = [
 {
@@ -28,7 +29,12 @@ const appRoutes: Routes = [
 {
    path: 'admin',
    component: AdminComponent
- }
+ },
+
+ {
+    path: 'shoppingcart',
+    component: ShoppingcartComponent
+  }
 ];
 
 
